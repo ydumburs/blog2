@@ -89,8 +89,7 @@ If testing on a physical device within the same network, obtain your machine’s
   3. Run on a physical device
 
 # Error Handling
-This demo is designed to fail safely without crashing, and to keep users moving through the flow with clear recovery paths.
-Principles  
+This demo is designed to fail safely without crashing, and to keep users moving through the flow with clear recovery paths.  
 - No app-killing failures for recoverable errors  
 Network issues, unsupported carriers, invalid inputs, and unexpected responses are handled in-place with user-facing guidance.  
 - UI always returns to an actionable state  
