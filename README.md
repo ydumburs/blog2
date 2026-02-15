@@ -76,7 +76,7 @@ VONAGE_APPLICATION_ID=application id
 VONAGE_PRIVATE_KEY_PATH=path to private.key
 VONAGE_VIDEO_SESSION_ID=video session id
 ```
-For test purposes, a fixed Video Session ID can be generated via the Video Playground from https://tools.vonage.com/video/playground.  
+For test purposes, a fixed Video Session ID can be generated via the [Video Playground](https://tools.vonage.com/video/playground).  
 
   3. Run the backend:
 ```
