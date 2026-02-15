@@ -12,6 +12,10 @@ For the architectural decisions and product rationale behind this demo, see the 
 ## Table of Contents  
 - [Architecture](#Architecture)
 - [Prerequisites](#Prerequisites)
+- [Setup & Run for Development](#setup--run-for-development)
+- [Error Handling](#error-handling)
+- [Failure Scenarios](#failure-scenarios)
+- [Production Recommendations](#production-recommendations)
 
 # Architecture  
 The solution is intentionally designed with a clear separation of concerns. Authentication and video are deliberately decoupled. Verification completes first, only then is a Video token issued and the session initialized.  
@@ -42,7 +46,7 @@ To run this demo, you will need:
 - For testing, a supported phone number must be registered in the Network Registry Playground.
 - In a production environment, registration with the Network Registry is required.
 
-# Setup & Run for development environment
+# Setup & Run for Development
 ## 1. Enable Network APIs in the Dashboard
 Before running the demo, make sure your Vonage application is properly configured:
   1. Log in to the Vonage API Dashboard.
@@ -79,7 +83,7 @@ If testing on a physical device within the same network, obtain your machine’s
   2. Update the backend base URL in ServerConfig.kt
   3. Run on a physical device
 
-# Error Handling Strategy
+# Error Handling
 This demo is designed to fail safely without crashing, and to keep users moving through the flow with clear recovery paths.
 Principles  
 - No app-killing failures for recoverable errors  
@@ -89,7 +93,7 @@ Every failure path unlocks the relevant UI (buttons re-enabled) and returns focu
 - Errors are routed, not treated as “exceptions”  
 Silent Auth “not supported” is handled as a routing outcome (SMS fallback), not a hard failure.  
 
-# How failures are handled in this repo
+# Failure Scenarios
 - Input validation  
 Invalid phone numbers / SMS codes are blocked client-side with field-level errors and focus.  
 - Silent Auth check failures  
@@ -99,7 +103,7 @@ Non-200 responses or non-completed statuses keep the user in the authentication 
 - Video token failures  
 Token fetch errors are treated as recoverable network/setup issues: the UI is unlocked and the user is prompted to try again (video is not started in a partial state).
 
-# Recommended production refinements
+# Production Recommendations
 - Create sessions dynamically (per user, per room, or per meeting) and issue short-lived tokens scoped to that session.  
 - Replace generic message like “Silent Auth failed” with action-based and user-friendly messages (“Out of range, check your mobile network and try again”, “It looks like you have multiple SIMs. Make sure mobile data is enabled for this number and try again.”).  
 - Add retry limits + backoff for transient network errors.  
