@@ -7,6 +7,7 @@
   - [Application Setup](#application-setup)
   - [Backend Setup](#backend-setup)
   - [Android Setup](#android-setup)
+- [How to Use the App](#how-to-use-the-app)
 - [Error Handling](#error-handling)
 - [Failure Scenarios](#failure-scenarios)
 - [Production Recommendations](#production-recommendations)
@@ -81,12 +82,21 @@ For test purposes, a fixed Video Session ID can be generated via the Video Playg
 ```
 uvicorn app:app --reload --host 0.0.0.0 --port 8000
 ```
-If testing on a physical device within the same network, obtain your machine’s local IP address (e.g., `ipconfig getifaddr en0` on macOS) and update the base URL accordingly (e.g., http://192.168.1.1:8000). Alternatively, expose the backend using `ngrok`.  
+If testing on a physical device within the same network, obtain your machine’s local IP address (e.g. `ipconfig getifaddr en0` on macOS) and update the base URL accordingly (e.g. http://192.168.1.1:8000). Alternatively, expose the backend using `ngrok`.  
 
 ## Android Setup
   1. Open the `client/android` project in Android Studio
   2. Update the backend base URL in `ServerConfig.kt`
   3. Run on a physical device
+
+# How to Use the App
+1. Enter a phone number in E.164 format (e.g. 447XXXXXXXXX)
+2. Tab **Verify and Join**
+
+Then the flow proceeds based on network support:
+- Supported number: Silent Auth is triggered over the mobile network.
+- Virtual Operator: Silent Auth is simulated and completes without a physical SIM.
+- Unsupported number: The app falls back to SMS verification.  
 
 # Error Handling
 This demo is designed to fail safely without crashing, and to keep users moving through the flow with clear recovery paths.  
@@ -105,7 +115,7 @@ If the cellular request fails (or returns an error payload), the app does not cl
 - Verification confirmation failures  
 Non-200 responses or non-completed statuses keep the user in the authentication flow, with a retry path.  
 - Video token failures  
-Token fetch errors are treated as recoverable network/setup issues: the UI is unlocked and the user is prompted to try again (video is not started in a partial state).
+Token fetch errors are treated as recoverable network/setup issues. The UI is unlocked and the user is prompted to try again (video is not started in a partial state).
 
 # Production Recommendations
 - Create sessions dynamically (per user, per room, or per meeting) and issue short-lived tokens scoped to that session.  
