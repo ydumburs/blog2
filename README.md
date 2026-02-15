@@ -43,7 +43,7 @@ To run this demo, you will need:
 - A physical device with mobile data enabled SIM
 
 ## Notes  
-- Video works with an OpenTok account, but Verify requires a Vonage API account.
+- Video can also work with an OpenTok account, but Verify requires a Vonage API account.
 - The Android emulator can be used for basic UI testing using a Virtual Operator. 
 - To test Silent Auth, you have two options:
   - Use the Virtual Operator provided for testing purposes
