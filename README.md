@@ -45,9 +45,9 @@ To run this demo, you will need:
 
 ## Notes  
 - Video can also work with an OpenTok account, but Verify requires a Vonage API account.
-- The Android emulator can be used for basic UI testing using a Virtual Operator. 
+- The Android emulator can be used for basic UI testing using a [Virtual Operator](https://developer.vonage.com/en/verify/concepts/virtual-operator-silent-auth?source=verify). 
 - To test Silent Auth, you have two options:
-  - Use the [Virtual Operator](https://developer.vonage.com/en/verify/concepts/virtual-operator-silent-auth) provided for testing purposes
+  - Use the [Virtual Operator](https://developer.vonage.com/en/verify/concepts/virtual-operator-silent-auth?source=verify) provided for testing purposes
   - Use a SIM from a [supported mobile operator](https://developer.vonage.com/en/verify/concepts/silent-authentication?source=verify#availability) with mobile data enabled
 - For testing, a [supported phone number](https://developer.vonage.com/en/verify/concepts/silent-authentication?source=verify#availability) must be registered in the [Network Registry Playground](https://developer.vonage.com/en/getting-started-network/concepts/playground).
 - In a production environment, registration with the [Network Registry](https://developer.vonage.com/en/verify/concepts/silent-authentication?source=verify#production) is required.
@@ -95,7 +95,7 @@ If testing on a physical device within the same network, obtain your machine’s
 
 Then the flow proceeds based on network support:
 - [Supported number](https://developer.vonage.com/en/verify/concepts/silent-authentication?source=verify#availability): Silent Auth is triggered over the mobile network.
-- [Virtual Operator](https://developer.vonage.com/en/verify/concepts/virtual-operator-silent-auth): Silent Auth is simulated and completes without a physical SIM.
+- [Virtual Operator](https://developer.vonage.com/en/verify/concepts/virtual-operator-silent-auth?source=verify): Silent Auth is simulated and completes without a physical SIM.
 - Unsupported number: The app falls back to SMS verification.  
 
 # Error Handling
