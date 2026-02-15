@@ -14,6 +14,9 @@ For the architectural decisions and product rationale behind this demo, see the 
 - [Prerequisites](#Prerequisites)
   - [Notes](#notes)
 - [Setup & Run for Development](#setup--run-for-development)
+  - [Application Setup](#application-setup)
+  - [Backend Setup](#backend-setup)
+  - [Android Setup](#android-setup)
 - [Error Handling](#error-handling)
 - [Failure Scenarios](#failure-scenarios)
 - [Production Recommendations](#production-recommendations)
@@ -48,7 +51,7 @@ To run this demo, you will need:
 - In a production environment, registration with the Network Registry is required.
 
 # Setup & Run for Development
-## 1. Enable Network APIs in the Dashboard
+## 1. Application Setup
 Before running the demo, make sure your Vonage application is properly configured:
   1. Log in to the Vonage API Dashboard.
   2. Create or open an existing Application.
@@ -58,7 +61,7 @@ Before running the demo, make sure your Vonage application is properly configure
   4. Click on “Configure Playground”
   5. From the  “Add numbers” , Add a phone number from supported operators that you’d like to test Silent Auth
 
-## 2. Backend Setup (Python)
+## 2. Backend Setup
   1. Run the following commands under the backend folder:  
 ```
 python3 -m venv venv
