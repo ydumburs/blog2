@@ -4,7 +4,7 @@ This repository demonstrates how Vonage Network APIs and Vonage Video API can be
 Using Silent Authentication (Silent Auth) via the Verify API with application-level SMS fallback, the app verifies device ownership before generating a Video API token and joining a live session.  
 
 - Vonage APIs  
-  - Verify API (Silent Auth + SMS fallback): Device ownership validation  
+  - Verify API: Device ownership validation using Silent Auth / SMS fallback    
   - Video API: Real-time video creation and access  
 
 For the architectural decisions and product rationale behind this demo, see the accompanying blog post:  
