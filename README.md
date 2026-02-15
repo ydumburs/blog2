@@ -12,6 +12,7 @@ For the architectural decisions and product rationale behind this demo, see the 
 ## Table of Contents  
 - [Architecture](#Architecture)
 - [Prerequisites](#Prerequisites)
+  - [Notes](#notes)
 - [Setup & Run for Development](#setup--run-for-development)
 - [Error Handling](#error-handling)
 - [Failure Scenarios](#failure-scenarios)
