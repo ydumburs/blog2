@@ -56,36 +56,36 @@ To run this demo, you will need:
 Before running the demo, make sure your Vonage application is properly configured:
   1. Log in to the Vonage API Dashboard.
   2. Create or open an existing Application.
-  3. Enable:
-    - Video 
-    - Network Registry with “Playground” access type
-  4. Click on “Configure Playground”
-  5. From the  “Add numbers” , Add a phone number from supported operators that you’d like to test Silent Auth
+  3. Enable the following capabilities:  
+    - Video  
+    - Network Registry with **Playground** access type
+  4. Select **Generate public and private key** > **Generate new application**
+  5. Open **Configure Playground** > **Add numbers** and add a phone number from a supported operator.  
 
 ## Backend Setup
-  1. Run the following commands under the backend folder:  
+  1. Run the following commands under the `backend` folder:  
 ```
 python3 -m venv venv
 source venv/bin/activate
 pip install -r requirements.txt
 ```
-  2. Rename the .env.example to .env and add your credentials:
+  2. Rename the `.env.example` to `.env` and add your credentials:
 ```
 VONAGE_APPLICATION_ID=application id
 VONAGE_PRIVATE_KEY_PATH=path to private.key
 VONAGE_VIDEO_SESSION_ID=video session id
 ```
-For test purposes, a fixed session ID can be generated via the Video Playground from https://tools.vonage.com/video/playground.  
+For test purposes, a fixed Video Session ID can be generated via the Video Playground from https://tools.vonage.com/video/playground.  
 
   3. Run the backend:
 ```
 uvicorn app:app --reload --host 0.0.0.0 --port 8000
 ```
-If testing on a physical device within the same network, obtain your machine’s local IP address (e.g., ipconfig getifaddr en0 on macOS) and update the base URL accordingly (e.g., http://192.168.1.193:8000). Alternatively, expose the backend using ngrok.  
+If testing on a physical device within the same network, obtain your machine’s local IP address (e.g., `ipconfig getifaddr en0` on macOS) and update the base URL accordingly (e.g., http://192.168.1.1:8000). Alternatively, expose the backend using `ngrok`.  
 
 ## Android Setup
-  1. Open the client/android project in Android Studio
-  2. Update the backend base URL in ServerConfig.kt
+  1. Open the `client/android` project in Android Studio
+  2. Update the backend base URL in `ServerConfig.kt`
   3. Run on a physical device
 
 # Error Handling
