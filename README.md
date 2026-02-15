@@ -13,9 +13,9 @@
 - [Production Recommendations](#production-recommendations)
 
 # Overview
-This repository demonstrates how **[Vonage Network APIs](https://developer.vonage.com/en/getting-started-network/concepts/network-features)** and **[Vonage Video API](https://developer.vonage.com/en/video/overview?source=video)** can be combined to create a **network-powered, passwordless** onboarding experience for real-time video applications.  
+This repository demonstrates how [Vonage Network APIs](https://developer.vonage.com/en/getting-started-network/concepts/network-features) and [Vonage Video API](https://developer.vonage.com/en/video/overview?source=video) can be combined to create a **network-powered, passwordless** onboarding experience for real-time video applications.  
 
-Using **[Silent Authentication (Silent Auth)](https://developer.vonage.com/en/verify/concepts/silent-authentication)** via the [Verify API](https://developer.vonage.com/en/verify/overview) with application-level [SMS](https://developer.vonage.com/en/verify/concepts/workflow?source=verify#sms) fallback, the app verifies device ownership before generating a Video API token and joining a live session.  
+Using [Silent Authentication (Silent Auth)](https://developer.vonage.com/en/verify/concepts/silent-authentication) via the [Verify API](https://developer.vonage.com/en/verify/overview) with application-level [SMS](https://developer.vonage.com/en/verify/concepts/workflow?source=verify#sms) fallback, the app verifies device ownership before generating a Video API token and joining a live session.  
 
 - Vonage APIs  
   - **Verify API**: Device ownership validation using Silent Auth / SMS fallback    
@@ -47,10 +47,10 @@ To run this demo, you will need:
 - Video can also work with an **OpenTok** account, but Verify requires a **Vonage API account**.
 - The Android **emulator** can be used for basic UI testing using a [Virtual Operator](https://developer.vonage.com/en/verify/concepts/virtual-operator-silent-auth?source=verify). 
 - To test Silent Auth, you have two options:
-  - Use the **[Virtual Operator](https://developer.vonage.com/en/verify/concepts/virtual-operator-silent-auth?source=verify)** provided for testing purposes **without a physical device**  
-  - Use a **SIM** from a **[supported mobile operator](https://developer.vonage.com/en/verify/concepts/silent-authentication?source=verify#availability)** with mobile data enabled on a **physical device**
-- For testing, a [supported phone number](https://developer.vonage.com/en/verify/concepts/silent-authentication?source=verify#availability) must be registered in the **[Network Registry Playground](https://developer.vonage.com/en/getting-started-network/concepts/playground)**.
-- In a production environment, registration with the **[Network Registry](https://developer.vonage.com/en/verify/concepts/silent-authentication?source=verify#production)** is required.
+  - Use the [Virtual Operator](https://developer.vonage.com/en/verify/concepts/virtual-operator-silent-auth?source=verify) provided for testing purposes **without a physical device**  
+  - Use a **SIM** from a [supported mobile operator](https://developer.vonage.com/en/verify/concepts/silent-authentication?source=verify#availability) with mobile data enabled on a **physical device**
+- For testing, a [supported phone number](https://developer.vonage.com/en/verify/concepts/silent-authentication?source=verify#availability) must be registered in the [Network Registry Playground](https://developer.vonage.com/en/getting-started-network/concepts/playground).
+- In a production environment, registration with the [Network Registry](https://developer.vonage.com/en/verify/concepts/silent-authentication?source=verify#production) is required.
 
 # Setup & Run for Development
 ## Application Setup
