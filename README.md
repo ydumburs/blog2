@@ -119,7 +119,7 @@ Token fetch errors are treated as recoverable network/setup issues. The UI is un
 
 # Production Recommendations
 - **Create sessions dynamically** (per user, per room, or per meeting) and issue short-lived tokens scoped to that session.  
-- **Replace generic error message like “Silent Auth failed” with **action-based and user-friendly** messages (“Out of range, check your mobile network and try again”, “It looks like you have multiple SIMs. Make sure mobile data is enabled for this number and try again.”).  
+- Replace generic error message like “Silent Auth failed” with **action-based and user-friendly** messages (“Out of range, check your mobile network and try again”, “It looks like you have multiple SIMs. Make sure mobile data is enabled for this number and try again.”).  
 - **Add retry limits + backoff** for transient network errors.  
 - **Log full technical details to telemetry**, but show minimal user text.  
 - Provide a single **“Start over” CTA** that resets state (verifyRequestId, verifyCheckUrl, UI mode, locks).  
