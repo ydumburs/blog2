@@ -99,30 +99,30 @@ Then the flow proceeds based on network support:
 - Unsupported number: The app falls back to SMS verification.  
 
 # Error Handling
-This demo is designed to fail safely without crashing, and to keep users moving through the flow with clear recovery paths.  
-- No app-killing failures for recoverable errors  
+This demo is designed to **fail safely** without crashing, and to keep users moving through the flow with clear recovery paths.  
+- **No app-killing failures for recoverable errors**  
 Network issues, unsupported carriers, invalid inputs, and unexpected responses are handled in-place with user-facing guidance.  
-- UI always returns to an actionable state  
+- **UI always returns to an actionable state**  
 Every failure path unlocks the relevant UI (buttons re-enabled) and returns focus to the next expected action.  
-- Errors are routed, not treated as “exceptions”  
+- **Errors are routed, not treated as exceptions**  
 Silent Auth “not supported” is handled as a routing outcome (SMS fallback), not a hard failure.  
 
 # Failure Scenarios
-- Input validation  
+- **Input validation**  
 Invalid phone numbers / SMS codes are blocked client-side with field-level errors and focus.  
-- Silent Auth check failures  
+- **Silent Auth check failures**  
 If the cellular request fails (or returns an error payload), the app does not close—it unlocks the UI and prompts the user to retry (or proceed via SMS when applicable).  
-- Verification confirmation failures  
+- **Verification confirmation failures**  
 Non-200 responses or non-completed statuses keep the user in the authentication flow, with a retry path.  
-- Video token failures  
+- **Video token failures**  
 Token fetch errors are treated as recoverable network/setup issues. The UI is unlocked and the user is prompted to try again (video is not started in a partial state).
 
 # Production Recommendations
-- Create sessions dynamically (per user, per room, or per meeting) and issue short-lived tokens scoped to that session.  
-- Replace generic message like “Silent Auth failed” with action-based and user-friendly messages (“Out of range, check your mobile network and try again”, “It looks like you have multiple SIMs. Make sure mobile data is enabled for this number and try again.”).  
-- Add retry limits + backoff for transient network errors.  
-- Log full technical details to telemetry, but show minimal user text.  
-- Provide a single “Start over” CTA that resets state (verifyRequestId, verifyCheckUrl, UI mode, locks).  
+- **Create sessions dynamically** (per user, per room, or per meeting) and issue short-lived tokens scoped to that session.  
+- **Replace generic error message like “Silent Auth failed” with **action-based and user-friendly** messages (“Out of range, check your mobile network and try again”, “It looks like you have multiple SIMs. Make sure mobile data is enabled for this number and try again.”).  
+- **Add retry limits + backoff** for transient network errors.  
+- **Log full technical details to telemetry**, but show minimal user text.  
+- Provide a single **“Start over” CTA** that resets state (verifyRequestId, verifyCheckUrl, UI mode, locks).  
 
 
 
