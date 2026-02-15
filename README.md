@@ -72,9 +72,9 @@ pip install -r requirements.txt
 ```
   2. Rename the `.env.example` to `.env` and add your credentials:
 ```
-VONAGE_APPLICATION_ID=application id
-VONAGE_PRIVATE_KEY_PATH=path to private.key
-VONAGE_VIDEO_SESSION_ID=video session id
+VONAGE_APPLICATION_ID=application_id
+VONAGE_PRIVATE_KEY_PATH=path_to_private.key
+VONAGE_VIDEO_SESSION_ID=video_session_id
 ```
 For test purposes, a fixed Video Session ID can be generated via the [Video Playground](https://tools.vonage.com/video/playground).  
 
