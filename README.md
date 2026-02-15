@@ -52,7 +52,7 @@ To run this demo, you will need:
 - In a production environment, registration with the Network Registry is required.
 
 # Setup & Run for Development
-## 1. Application Setup
+## Application Setup
 Before running the demo, make sure your Vonage application is properly configured:
   1. Log in to the Vonage API Dashboard.
   2. Create or open an existing Application.
@@ -62,7 +62,7 @@ Before running the demo, make sure your Vonage application is properly configure
   4. Click on “Configure Playground”
   5. From the  “Add numbers” , Add a phone number from supported operators that you’d like to test Silent Auth
 
-## 2. Backend Setup
+## Backend Setup
   1. Run the following commands under the backend folder:  
 ```
 python3 -m venv venv
@@ -83,7 +83,7 @@ uvicorn app:app --reload --host 0.0.0.0 --port 8000
 ```
 If testing on a physical device within the same network, obtain your machine’s local IP address (e.g., ipconfig getifaddr en0 on macOS) and update the base URL accordingly (e.g., http://192.168.1.193:8000). Alternatively, expose the backend using ngrok.  
 
-## 3. Android Setup
+## Android Setup
   1. Open the client/android project in Android Studio
   2. Update the backend base URL in ServerConfig.kt
   3. Run on a physical device
