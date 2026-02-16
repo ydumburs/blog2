@@ -25,13 +25,12 @@ Using [Silent Authentication (Silent Auth)](https://developer.vonage.com/en/veri
 For the architectural decisions and product rationale behind this demo, see the accompanying blog post:  
 
 # Demo Flow
-Silent Auth (supported number)  
-
+Silent Auth for supported phone number  
 <img width="150" height="300" alt="screenshot_phone_input" src="https://github.com/user-attachments/assets/49224313-e148-4269-828a-12254814acb9" />
 <img width="150" height="300" alt="screenshot_silent_auth_started" src="https://github.com/user-attachments/assets/8f225511-3390-4f12-9643-1096bf13243e" />
 <img width="150" height="300" alt="screenshot_silent_auth_verified" src="https://github.com/user-attachments/assets/2974e1b5-3e7f-4d24-80a5-e0843f36301c" />  
-
-SMS (unsupported number)  
+  
+SMS for unsupported phone number  
 <img width="150" height="300" alt="screenshot_unsupported_phone_input" src="https://github.com/user-attachments/assets/5bab7e91-3ac7-41bf-a235-0f364905c79d" />
 <img width="150" height="300" alt="screenshot_sms_auth_started" src="https://github.com/user-attachments/assets/930445a2-b0fe-4632-a555-e746819e2335" />
 <img width="150" height="300" alt="screenshot_sms_code_sent" src="https://github.com/user-attachments/assets/e84d79b5-c1b7-4ad9-bc36-8c5c1c240e59" />
