@@ -36,10 +36,6 @@ SMS (unsupported number)
 <img width="178" height="403" alt="3_sms_code_sent" src="https://github.com/user-attachments/assets/69d3b801-895f-47f2-8967-7d15ad8edb1f" />
 <img width="178" height="403" alt="4_sms_code_verified" src="https://github.com/user-attachments/assets/f3312dd7-5e68-49a7-8f3f-bf1ab363f72d" />
 
-
-
-
-
 # Architecture  
 The solution is intentionally designed with a clear separation of concerns. Authentication and video are deliberately decoupled. Verification completes first, only then is a Video token issued and the session initialized.  
 - **Android Client**
@@ -64,9 +60,9 @@ To run this demo, you will need:
 - Video can also work with an **OpenTok** account, but Verify requires a **Vonage API account**.
 - The Android **emulator** can be used for basic UI testing using a [Virtual Operator](https://developer.vonage.com/en/verify/concepts/virtual-operator-silent-auth?source=verify). 
 - To test Silent Auth, you have two options:
-  - Use the [Virtual Operator](https://developer.vonage.com/en/verify/concepts/virtual-operator-silent-auth?source=verify) provided for testing purposes **without a physical device**  
+  - Use the Virtual Operator provided for testing purposes **without a physical device**  
   - Use a **SIM** from a [supported mobile operator](https://developer.vonage.com/en/verify/concepts/silent-authentication?source=verify#availability) with mobile data enabled on a **physical device**
-- For testing, a [supported phone number](https://developer.vonage.com/en/verify/concepts/silent-authentication?source=verify#availability) must be registered in the [Network Registry Playground](https://developer.vonage.com/en/getting-started-network/concepts/playground).
+- For testing, a supported phone number must be registered in the [Network Registry Playground](https://developer.vonage.com/en/getting-started-network/concepts/playground).
 - In a production environment, registration with the [Network Registry](https://developer.vonage.com/en/verify/concepts/silent-authentication?source=verify#production) is required.
 
 # Setup & Run for Development
@@ -78,7 +74,7 @@ Before running the demo, make sure your Vonage application is properly configure
     - Video  
     - Network Registry with **Playground** access type
   4. Select **Generate public and private key** > **Generate new application**
-  5. Open **Configure Playground** > **Add numbers** and add a phone number from a [supported operator](https://developer.vonage.com/en/verify/concepts/silent-authentication?source=verify#availability).  
+  5. Open **Configure Playground** > **Add numbers** and add a phone number from a supported operator.  
 
 ## Backend Setup
   1. Run the following commands under the `backend` folder:  
@@ -111,12 +107,12 @@ If testing on a physical device within the same network, obtain your machine’s
 2. Tab **Verify and Join**
 
 Then the flow proceeds based on network support:
-- [Supported number](https://developer.vonage.com/en/verify/concepts/silent-authentication?source=verify#availability): Silent Auth is triggered over the mobile network.
-- [Virtual Operator](https://developer.vonage.com/en/verify/concepts/virtual-operator-silent-auth?source=verify): Silent Auth is simulated and completes without a physical SIM.
+- Supported number: Silent Auth is triggered over the mobile network.
+- Virtual Operator: Silent Auth is simulated and completes without a physical SIM.
 - Unsupported number: The app falls back to SMS verification.  
 
 # Error Handling
-This demo is designed to **fail safely** without crashing, and to keep users moving through the flow with clear recovery paths.  
+This demo is designed to **fail safely** without crashing, and to keep users moving through the flow with clear recovery paths. Error handling aligns with the [Verify API response model](https://developer.vonage.com/en/api/verify.v2).  
 - **No app-killing failures for recoverable errors**  
 Network issues, unsupported carriers, invalid inputs, and unexpected responses are handled in-place with user-facing guidance.  
 - **UI always returns to an actionable state**  
