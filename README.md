@@ -108,7 +108,7 @@ If testing on a physical device within the same network, obtain your machine’s
 
 Then the flow proceeds based on network support:
 - Supported number: Silent Auth is triggered over the mobile network.
-- Virtual Operator: Silent Auth is simulated and completes without a physical SIM.
+- Virtual Operator with even digit: Silent Auth is simulated and completes without a physical SIM.
 - Unsupported number: The app falls back to SMS verification.  
 
 # Error Handling
