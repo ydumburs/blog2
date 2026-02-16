@@ -1,5 +1,6 @@
 ## Table of Contents  
 - [Overview](#overview)
+- [Demo Flow](#demo-flow)
 - [Architecture](#Architecture)
 - [Prerequisites](#Prerequisites)
   - [Notes](#notes)
@@ -22,6 +23,22 @@ Using [Silent Authentication (Silent Auth)](https://developer.vonage.com/en/veri
   - **Video API**: Real-time video creation and access  
 
 For the architectural decisions and product rationale behind this demo, see the accompanying blog post:  
+
+# Demo Flow
+Silent Auth (supported number)  
+<img width="178" height="403" alt="0_phone_input" src="https://github.com/user-attachments/assets/7d37f8c5-af0f-4b44-897c-ebebc0a19a25" />
+<img width="178" height="403" alt="1_silent_auth_started" src="https://github.com/user-attachments/assets/6279a521-94d7-4011-b880-90cf362ec600" />
+<img width="178" height="403" alt="2_silent_auth_verified" src="https://github.com/user-attachments/assets/d3b958ea-5a64-4b21-918b-b6aafcd3b95e" />
+  
+SMS (unsupported number)  
+<img width="178" height="403" alt="1_unsupported_phone_input" src="https://github.com/user-attachments/assets/cd412dda-4ea3-4ba6-bdfa-aa6c8bfa6d52" />
+<img width="178" height="403" alt="2_sms_auth_started" src="https://github.com/user-attachments/assets/6d675858-b33f-49c8-ae8b-057e7215f9df" />
+<img width="178" height="403" alt="3_sms_code_sent" src="https://github.com/user-attachments/assets/69d3b801-895f-47f2-8967-7d15ad8edb1f" />
+<img width="178" height="403" alt="4_sms_code_verified" src="https://github.com/user-attachments/assets/f3312dd7-5e68-49a7-8f3f-bf1ab363f72d" />
+
+
+
+
 
 # Architecture  
 The solution is intentionally designed with a clear separation of concerns. Authentication and video are deliberately decoupled. Verification completes first, only then is a Video token issued and the session initialized.  
