@@ -26,15 +26,16 @@ For the architectural decisions and product rationale behind this demo, see the 
 
 # Demo Flow
 Silent Auth (supported number)  
-<img width="178" height="403" alt="0_phone_input" src="https://github.com/user-attachments/assets/7d37f8c5-af0f-4b44-897c-ebebc0a19a25" />
-<img width="178" height="403" alt="1_silent_auth_started" src="https://github.com/user-attachments/assets/6279a521-94d7-4011-b880-90cf362ec600" />
-<img width="178" height="403" alt="2_silent_auth_verified" src="https://github.com/user-attachments/assets/d3b958ea-5a64-4b21-918b-b6aafcd3b95e" />
-  
+
+<img width="150" height="300" alt="screenshot_phone_input" src="https://github.com/user-attachments/assets/49224313-e148-4269-828a-12254814acb9" />
+<img width="150" height="300" alt="screenshot_silent_auth_started" src="https://github.com/user-attachments/assets/8f225511-3390-4f12-9643-1096bf13243e" />
+<img width="150" height="300" alt="screenshot_silent_auth_verified" src="https://github.com/user-attachments/assets/2974e1b5-3e7f-4d24-80a5-e0843f36301c" />  
+
 SMS (unsupported number)  
-<img width="178" height="403" alt="1_unsupported_phone_input" src="https://github.com/user-attachments/assets/cd412dda-4ea3-4ba6-bdfa-aa6c8bfa6d52" />
-<img width="178" height="403" alt="2_sms_auth_started" src="https://github.com/user-attachments/assets/6d675858-b33f-49c8-ae8b-057e7215f9df" />
-<img width="178" height="403" alt="3_sms_code_sent" src="https://github.com/user-attachments/assets/69d3b801-895f-47f2-8967-7d15ad8edb1f" />
-<img width="178" height="403" alt="4_sms_code_verified" src="https://github.com/user-attachments/assets/f3312dd7-5e68-49a7-8f3f-bf1ab363f72d" />
+<img width="150" height="300" alt="screenshot_unsupported_phone_input" src="https://github.com/user-attachments/assets/5bab7e91-3ac7-41bf-a235-0f364905c79d" />
+<img width="150" height="300" alt="screenshot_sms_auth_started" src="https://github.com/user-attachments/assets/930445a2-b0fe-4632-a555-e746819e2335" />
+<img width="150" height="300" alt="screenshot_sms_code_sent" src="https://github.com/user-attachments/assets/e84d79b5-c1b7-4ad9-bc36-8c5c1c240e59" />
+<img width="150" height="300" alt="screenshot_sms_auth_verified" src="https://github.com/user-attachments/assets/f8591a8d-6a68-4572-bae9-85525c139397" />
 
 # Architecture  
 The solution is intentionally designed with a clear separation of concerns. Authentication and video are deliberately decoupled. Verification completes first, only then is a Video token issued and the session initialized.  
